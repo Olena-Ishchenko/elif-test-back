@@ -7,10 +7,6 @@ export const getAllEvents = async ({ page = 1, perPage = 12 }) => {
 
   const eventsQuery = EventsCollection.find();
 
-  //   if (filter.eventId) {
-  //     eventsQuery.where('event_id').equals(filter.eventId);
-  //   }
-
   const eventsCount = await EventsCollection.find()
     .merge(eventsQuery)
     .countDocuments();
